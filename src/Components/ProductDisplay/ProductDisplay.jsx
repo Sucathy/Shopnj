@@ -89,7 +89,8 @@ const ProductDisplay = (props) => {
             Rs.{product.new_price}
           </div>
         </div>
-        <div className="description">description. {product.descriptions}</div>
+        <div className="description">brand {product.category}</div>
+        {/* <div className="description">description. {product.descriptions}</div> */}
         {/* <div className="productdisplay-right-description">
           A lightweight, usually knitted, pullover shirt, close-fitting and with
           a round neckline and short sleeves, worn as an undershirt or outer
@@ -223,11 +224,7 @@ const ProductDisplay = (props) => {
         >
           ADD TO CART
         </button>
-        <Link
-          className="buy-now"
-          to="/checkoutList"
-          style={{ textDecoration: "none" }}
-        >
+        <Link className="buy-now" to="/cart" style={{ textDecoration: "none" }}>
           <button>BUY NOW</button>
         </Link>
 

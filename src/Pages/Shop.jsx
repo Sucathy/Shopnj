@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Hero from "../Components/Hero/Hero";
 import NewCollections from "../Components/NewCollections/NewCollections";
 import NewsLetter from "../Components/NewsLetter/NewsLetter";
+import OfferZone from "../Components/OfferZone/OfferZone";
 import Popular from "../Components/Popular/Popular";
 
 const Shop = () => {
@@ -32,8 +33,12 @@ const Shop = () => {
     <div>
       <Hero />
       <Popular data={popular} />
+      <hr style={customLineStyle} />
+      <OfferZone />
       {/* <Offers/> */}
-      <hr style={customLineStyle} /> <NewCollections data={newcollection} />
+      <hr style={customLineStyle} />
+
+      <NewCollections data={newcollection} />
       <NewsLetter />
     </div>
   );

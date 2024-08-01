@@ -2,18 +2,34 @@
   width: 100%;
   min-height: 90vh;
   background: #fce3fe;
-  padding-top: 100px;
+  padding-top: 80px;
+}
+
+.loginsignup-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px; /* Optional: adds some padding around the image */
+}
+
+.loginsignup-image img {
+  max-width: 40%; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 10px; /* Optional: adds rounded corners to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow around the image */
 }
 .loginsignup-container {
-  width: 90%;
+  width: 80%;
   max-width: 550px;
   background: white;
-  margin: auto;
+  margin: 15px;
   padding: 30px 40px;
   box-sizing: border-box;
 }
 .loginsignup-container h1 {
   margin: 15px 0px;
+  height: 30px;
 }
 .loginsignup-fields {
   display: flex;
