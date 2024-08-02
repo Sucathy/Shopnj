@@ -74,6 +74,7 @@ function App() {
           <Route path="/profile" element={<Profile loginId={loginId} />} />
           <Route path="/newaddaddress" element={<AddNewAddress />} />
           <Route path="/website" element={<Website />} />
+          
         </Routes>
         <Footer />
       </Router>
