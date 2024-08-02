@@ -8,7 +8,7 @@ const ShopCategory = (props) => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = () => {
-    fetch("http://54.210.0.55:4000/allproducts")
+    fetch("http://34.204.8.6:4000/allproducts")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   };
