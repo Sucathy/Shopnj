@@ -8,7 +8,7 @@ const Popular = (props) => {
 
   // Fetch all products from the server
   const fetchInfo = () => {
-    fetch("http://44.202.54.225:4000/allwebproducts")
+    fetch("http://34.229.212.238:4000/allwebproducts")
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

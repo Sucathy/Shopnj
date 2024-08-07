@@ -10,10 +10,10 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => {
-    fetch("http://44.202.54.225:4000/popularinwomen")
+    fetch("http://34.229.212.238:4000/popularinwomen")
       .then((res) => res.json())
       .then((data) => setPopular(data));
-    fetch("http://44.202.54.225:4000/newcollections")
+    fetch("http://34.229.212.238:4000/newcollections")
       .then((res) => res.json())
       .then((data) => setNewCollection(data));
   };
