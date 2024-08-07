@@ -80,7 +80,7 @@ const CartItems = () => {
         return;
       }
 
-      const response = await fetch("http://34.229.212.238:4000/order", {
+      const response = await fetch("http://34.224.29.145:4000/order", {
         method: "POST",
         body: JSON.stringify({
           amount: totalCartAmount * 100, // Amount should be in the smallest unit (e.g., paise for INR)
@@ -120,7 +120,7 @@ const CartItems = () => {
             };
 
             const validateRes = await fetch(
-              "http://34.229.212.238:4000/order/validate",
+              "http://34.224.29.145:4000/order/validate",
               {
                 method: "POST",
                 body: JSON.stringify(body),

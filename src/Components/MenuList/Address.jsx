@@ -25,16 +25,13 @@ const Address = () => {
 
   const fetchAccountDetails = async () => {
     try {
-      const response = await fetch(
-        "http://34.229.212.238:4000/accountdetails",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token") || "",
-          },
-        }
-      );
+      const response = await fetch("http://34.224.29.145:4000/accountdetails", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("auth-token") || "",
+        },
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch account details");
