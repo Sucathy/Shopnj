@@ -26,16 +26,13 @@ const AddNewAddress = () => {
 
   const fetchAccountDetails = async () => {
     try {
-      const response = await fetch(
-        "http://34.235.157.244:4000/addressdetails",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token") || "",
-          },
-        }
-      );
+      const response = await fetch("http://52.90.235.25:4000/addressdetails", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("auth-token") || "",
+        },
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch address details");
@@ -60,7 +57,7 @@ const AddNewAddress = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://34.235.157.244:4000/address", {
+      const response = await fetch("http://52.90.235.25:4000/address", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +103,7 @@ const AddNewAddress = () => {
   const handleDelete = async (addressId) => {
     try {
       const response = await fetch(
-        `http://34.235.157.244:4000/address/${addressId}`,
+        `http://52.90.235.25:4000/address/${addressId}`,
         {
           method: "DELETE",
           headers: {
