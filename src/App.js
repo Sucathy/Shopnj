@@ -1,25 +1,27 @@
 import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import kid_banner from "./Components/Assets/headerkids.jpg";
-import men_banner from "./Components/Assets/headermen.png";
-import new_banner from "./Components/Assets/headernewcollection.jpg";
-import women_banner from "./Components/Assets/headerwomen copy.jpg";
+import men_banner from "./Components/Assets/mensbanner7.png";
+import new_banner from "./Components/Assets/newcollection9.png";
+import women_banner from "./Components/Assets/wonmenbanner5.png";
 import CheckoutList from "./Components/Checkout/CheckoutList";
 import Footer from "./Components/Footer/Footer";
 import Account from "./Components/MenuList/Account";
 import AddNewAddress from "./Components/MenuList/AddNewAddress";
 import Address from "./Components/MenuList/Address";
-import Contact from "./Components/MenuList/Contact";
 import MenuLists from "./Components/MenuList/MenuLists";
 import OrderList from "./Components/MenuList/OrderList";
+import OrderListsDetails from "./Components/MenuList/OrderListsDetails";
 import Profile from "./Components/MenuList/Profile";
 import Navbar from "./Components/Navbar/Navbar";
 import Sidebar from "./Components/Navbar/Sidebar";
+import ContactUs from "./Components/NeedHelp/ContactUs";
+import PrivacyPolicy from "./Components/NeedHelp/PrivacyPolicy";
+import ReturnExchanges from "./Components/NeedHelp/ReturnExchanges";
+import ShippingPolicy from "./Components/NeedHelp/ShippingPolicy";
 import Website from "./Components/Website/Website";
-// import { AuthProvider } from "./Pages/AuthContext"; // Correct import
 import Cart from "./Pages/Cart";
 import LoginSignup from "./Pages/LoginSignup";
-// import PrivateRoute from "./Pages/PrivateRoute";
 import Product from "./Pages/Product";
 import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
@@ -31,12 +33,13 @@ function App() {
     setIsSidebarOpen(!isSidebarOpen);
   };
   const loginId = localStorage.getItem("auth-token");
-
+  // const loginId = "someLoginId";
   return (
     <div>
-      {/* <AuthProvider> */}
       <Router>
+        {/* <Navbar /> */}
         <Navbar toggleSidebar={toggleSidebar} />
+        {/* <Profile loginId={loginId} /> */}
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
         <Routes>
@@ -53,6 +56,7 @@ function App() {
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
           />
+
           <Route
             path="/NewCollections"
             element={
@@ -65,50 +69,26 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/checkoutList" element={<CheckoutList />} />
+
           <Route path="/menulist" element={<MenuLists />} />
           <Route path="/account" element={<Account />} />
           <Route path="/order" element={<OrderList />} />
+          <Route
+            path="/orderlistdetails/:orderId"
+            element={<OrderListsDetails />}
+          />
           <Route path="/address" element={<Address />} />
-          <Route path="/contact" element={<Contact />} />
+
           <Route path="/profile" element={<Profile loginId={loginId} />} />
           <Route path="/newaddaddress" element={<AddNewAddress />} />
           <Route path="/website" element={<Website />} />
-          {/* <Route
-              path="/account"
-              element={
-                <PrivateRoute>
-                  <Account />
-                </PrivateRoute>
-              }
-            /> */}
-          {/* <Route
-              path="/order"
-              element={
-                <PrivateRoute>
-                  <OrderList />
-                </PrivateRoute>
-              }
-            /> */}
-          {/* <Route
-              path="/address"
-              element={
-                <PrivateRoute>
-                  <Address />
-                </PrivateRoute>
-              }
-            /> */}
-          {/* <Route
-              path="/checkoutList"
-              element={
-                <PrivateRoute>
-                  <CheckoutList />
-                </PrivateRoute>
-              }
-            /> */}
+          <Route path="/returnexchange" element={<ReturnExchanges />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/shippingpolicy" element={<ShippingPolicy />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </Router>
-      {/* </AuthProvider> */}
     </div>
   );
 }

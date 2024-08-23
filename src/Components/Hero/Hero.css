@@ -1,146 +1,173 @@
-.hero-hero {
+/* General Container Styling */
+.website-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #ffffff;
+}
+.boxofview {
   width: 100%;
 }
-.listproduct-product-icons img {
-  width: 1300px;
-  height: 500px;
-  margin: 30px;
+.list_catcategory {
+  flex-direction: column;
+  display: none; /* Hide by default on larger screens */
+  flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed container width */
+  align-items: center; /* Align items vertically in the center */
+  justify-content: flex-start; /* Align items to the start of the container */
+  list-style: none; /* Remove bullet points or any default list styles */
+  gap: 5px; /* Add space between items (adjust as needed) */
+  color: #000000; /* Set text color */
+  font-size: 9px; /* Set font size */
+  font-weight: 900; /* Set font weight for bold text */
+  padding: 10px; /* Add padding inside the container */
 }
+
+.list_catcategory li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.list_catcategory img {
+  width: 85px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+/* Hero Container Styling */
 .hero-container {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 100%; /* Full viewport height for hero section */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero-wrapper {
   display: flex;
-  transition: transform 0.5s ease;
-  width: 100%; /* Assuming 3 hero sections */
-  height: 80%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .hero {
   min-width: 100%;
-  height: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* Space between for alignment */
-  padding: 0; /* Adjust padding for better spacing */
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-left {
-  line-height: 1.1;
-  margin-left: 35px; /* Adjusted padding */
+  max-width: 50%;
 }
 
 .hero-left h2 {
-  color: #090909;
-  font-size: 25px;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .hero-left p {
-  color: #171717;
-  font-size: 50px; /* Adjusted font size for better fit */
-  font-weight: 700;
-}
-
-.hero-hand-icon {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.hero-hand-icon p {
-  font-size: 25px; /* Added font size for hand icon text */
-}
-
-.hero-hand-icon img {
-  width: 50px; /* Adjusted image size */
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .hero-latest-btn {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 15px;
-  width: 200px; /* Adjusted button size */
-  height: 50px;
-  border-radius: 75px;
-  margin-top: 20px;
-  background: #ff4141;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.hero-latest-btn img {
-  width: 18px;
+.hero-latest-btn:hover {
+  background-color: #333;
 }
 
-.hero-right img {
-  width: 350px;
-  height: 350px;
-  margin: 0px; /* Adjusted image size */
-}
+/* Media Queries for Responsiveness */
 
-@media (max-width: 1100px) {
-  .hero-left p {
-    font-size: 60px; /* Adjusted font size for medium screens */
-  }
-
-  .hero-right img {
-    width: 100%;
-  }
-}
-
-@media (max-width: 900px) {
+/* Tablets and below */
+@media (max-width: 768px) {
   .hero {
-    flex-direction: row; /* Stack content vertically for tablets */
-    padding: 20px 5px;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .hero-left p {
-    font-size: 35px; /* Adjusted font size for tablets */
-  }
-
+  /* Ensure the hero-right image adjusts correctly on smaller screens */
   .hero-right img {
-    width: 100%;
-    /* Added margin for spacing */
-  }
-}
-
-@media (max-width: 700px) {
-  .hero {
-    padding: 0 5px; /* Reduced padding for small screens */
+    max-width: 100%; /* Reduce the image size to fit better on tablets */
+    height: auto;
   }
 
-  .hero-left {
-    padding: 2px; /* Adjusted padding */
-    line-height: 1.4;
+  .listproduct-product-icon {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    max-width: 740px;
+    height: auto;
+    margin-left: 10px;
+    flex-direction: column;
   }
 
-  .hero-left h2 {
-    font-size: 20px; /* Adjusted font size */
-    margin-bottom: 5px; /* Adjusted margin */
-  }
-
-  .hero-left p {
-    font-size: 20px; /* Adjusted font size for small screens */
-  }
-
-  .hero-right {
+  /* Show category list on tablets and below */
+  .list_catcategory {
     display: flex;
-    /* Hide image on very small screens */
+    flex-direction: column;
+    justify-content: space-around; /* Distribute items evenly */
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .hero-latest-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .boxofview {
+    width: 100%;
+  }
+  .hero {
+    padding: 20px;
   }
 
-  .hero-latest-btn {
-    margin-top: 20px;
-    width: 180px; /* Adjusted button size */
-    height: 40px;
+  /* Further reduce the hero-right image size on mobile */
+  .hero-right img {
+    max-width: 80%; /* Further reduce the image size for mobile screens */
+    height: auto;
+    margin: 0 auto; /* Center the image on mobile */
+  }
+
+  /* Adjust the product images for mobile */
+  .listproduct-product-icon {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    max-width: 360px;
+    max-height: 120px;
+    justify-items: center;
+  }
+
+  /* Ensure category list is mobile-friendly */
+  .list_catcategory {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px;
+  }
+
+  .list_catcategory li {
+    margin-bottom: 10px;
+  }
+
+  .list_catcategory img {
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+  }
+
+  .list_catcategory h3 {
+    font-size: 12px;
+    margin-left: 19px;
   }
 }

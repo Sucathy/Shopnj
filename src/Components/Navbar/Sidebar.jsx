@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const sidebarRef = useRef();
+  let [menu, setMenu] = useState("shop");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -40,46 +41,93 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </button>
           </li>
         </Link> */}
-        <Link to="/account" style={{ textDecoration: "none" }}>
-          <li>
-            <button
-              className="link-btn"
-              onClick={() => console.log("Account clicked")}
-            >
-              Account
-            </button>
+        <h3>category</h3>
+        <ul>
+          <li
+            onClick={() => {
+              setMenu("shop");
+            }}
+          >
+            <Link to="/" style={{ textDecoration: "none" }}>
+              Shop
+            </Link>
+            {menu === "shop" ? <hr /> : <></>}
           </li>
-        </Link>
-        <Link to="/order" style={{ textDecoration: "none" }}>
-          <li>
-            <button
-              className="link-btn"
-              onClick={() => console.log("Order clicked")}
-            >
-              Order
-            </button>
+          <li
+            onClick={() => {
+              setMenu("mens");
+            }}
+          >
+            <Link to="/mens" style={{ textDecoration: "none" }}>
+              Men
+            </Link>
+            {menu === "mens" ? <hr /> : <></>}
           </li>
-        </Link>
-        <Link to="/address" style={{ textDecoration: "none" }}>
-          <li>
-            <button
-              className="link-btn"
-              onClick={() => console.log("Address clicked")}
-            >
-              Address
-            </button>
+          <li
+            onClick={() => {
+              setMenu("womens");
+            }}
+          >
+            <Link to="/womens" style={{ textDecoration: "none" }}>
+              Women
+            </Link>
+            {menu === "womens" ? <hr /> : <></>}
           </li>
-        </Link>
-        <Link to="/contact" style={{ textDecoration: "none" }}>
-          <li>
-            <button
-              className="link-btn"
-              onClick={() => console.log("Contact clicked")}
-            >
-              Contact
-            </button>
+          <li
+            onClick={() => {
+              setMenu("kids");
+            }}
+          >
+            <Link to="/kids" style={{ textDecoration: "none" }}>
+              Kids
+            </Link>
+            {menu === "kids" ? <hr /> : <></>}
           </li>
-        </Link>
+          <li
+            onClick={() => {
+              setMenu("/NewCollection");
+            }}
+          >
+            <Link to="/NewCollections" style={{ textDecoration: "none" }}>
+              New Collection
+            </Link>
+            {menu === "/NewCollection" ? <hr /> : <></>}
+          </li>
+        </ul>
+        <hr />
+        <h3>deatils</h3>
+        <ul>
+          <Link to="/account" style={{ textDecoration: "none" }}>
+            <li>
+              <button
+                className="link-btn"
+                onClick={() => console.log("Account clicked")}
+              >
+                Account
+              </button>
+            </li>
+          </Link>
+          <Link to="/order" style={{ textDecoration: "none" }}>
+            <li>
+              <button
+                className="link-btn"
+                onClick={() => console.log("Order clicked")}
+              >
+                Order
+              </button>
+            </li>
+          </Link>
+          <Link to="/address" style={{ textDecoration: "none" }}>
+            <li>
+              <button
+                className="link-btn"
+                onClick={() => console.log("Address clicked")}
+              >
+                Address
+              </button>
+            </li>
+          </Link>
+        </ul>
         {/* <Link to="/website" style={{ textDecoration: "none" }}>
           <li>
             <button

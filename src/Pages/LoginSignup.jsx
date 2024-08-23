@@ -1,21 +1,29 @@
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import FormControl from "@mui/material/FormControl";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import InputLabel from "@mui/material/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import React, { useState } from "react";
+import loginn from "../Components/Assets/loginpage.jpg";
 import "./CSS/LoginSignup.css";
 
 const LoginSignup = () => {
   const [state, setState] = useState("Login");
   const [formData, setFormData] = useState({
-    // username: "",
     email: "",
     password: "",
     otp: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const login = async () => {
-    const response = await fetch("http://54.227.62.35:4000/login", {
+    const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -33,7 +41,7 @@ const LoginSignup = () => {
   };
 
   const signup = async () => {
-    const response = await fetch("http://54.227.62.35:4000/signup", {
+    const response = await fetch("http://localhost:4000/signup", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -51,7 +59,7 @@ const LoginSignup = () => {
   };
 
   const requestOtp = async () => {
-    const response = await fetch("http://54.227.62.35:4000/requestotp", {
+    const response = await fetch("http://localhost:4000/requestotp", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -69,7 +77,7 @@ const LoginSignup = () => {
   };
 
   const resetPassword = async () => {
-    const response = await fetch("http://54.227.62.35:4000/resetpassword", {
+    const response = await fetch("http://localhost:4000/resetpassword", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -90,10 +98,19 @@ const LoginSignup = () => {
     }
   };
 
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="loginsignup">
       <div className="loginsignup-container">
+        <div className="loginnn">
+          <h4>ShopSJ</h4> <img src={loginn} alt="Shop Logo" />
+        </div>
         <h1>{state}</h1>
+
         <div className="loginsignup-fields">
           {(state === "Sign Up" ||
             state === "Login" ||
@@ -107,13 +124,40 @@ const LoginSignup = () => {
             />
           )}
           {(state === "Sign Up" || state === "Login") && (
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={formData.password}
-              onChange={changeHandler}
-            />
+            <FormControl sx={{ m: 1, width: "45ch" }} variant="outlined">
+              <InputLabel htmlFor="outlined-adornment-password">
+                Password
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                      sx={{
+                        backgroundColor: "#f0f0f0", // Light grey background
+                        color: "#1976d2", // Primary color
+                        "&:hover": {
+                          backgroundColor: "#e0e0e0", // Darker grey on hover
+                        },
+                        padding: "20px", // Custom padding
+                        borderRadius: "50%", // Rounded corners
+                      }}
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+                name="password"
+                value={formData.password}
+                onChange={changeHandler}
+              />
+            </FormControl>
           )}
           {state === "Enter OTP" && (
             <>
@@ -124,13 +168,31 @@ const LoginSignup = () => {
                 value={formData.otp}
                 onChange={changeHandler}
               />
-              <input
-                type="password"
-                placeholder="New Password"
-                name="password"
-                value={formData.password}
-                onChange={changeHandler}
-              />
+              <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">
+                  New Password
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="New Password"
+                  name="password"
+                  value={formData.password}
+                  onChange={changeHandler}
+                />
+              </FormControl>
             </>
           )}
         </div>

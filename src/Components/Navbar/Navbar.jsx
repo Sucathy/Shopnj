@@ -2,8 +2,8 @@ import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 import cart_icon from "../Assets/cart_icon.png";
-import menu_icon from "../Assets/menu_icon.png";
-import nav_dropdown from "../Assets/nav_dropdown.png";
+import logo from "../Assets/logo2.jpeg";
+import menu_icon from "../Assets/menuicon2.svg";
 import OfferZone from "../OfferZone/OfferZone";
 import "./Navbar.css";
 
@@ -13,10 +13,10 @@ const Navbar = ({ toggleSidebar }) => {
   // const [searchQuery, setSearchQuery] = useState("");
   const menuRef = useRef();
 
-  const dropdown_toggle = (e) => {
-    menuRef.current.classList.toggle("nav-menu-visible");
-    e.target.classList.toggle("open");
-  };
+  // const dropdown_toggle = (e) => {
+  //   menuRef.current.classList.toggle("nav-menu-visible");
+  //   e.target.classList.toggle("open");
+  // };
 
   // const handleInputChange = (e) => {
   //   setSearchQuery(e.target.value);
@@ -31,8 +31,9 @@ const Navbar = ({ toggleSidebar }) => {
     <>
       <div className="nav">
         <button className="menu-btn" onClick={toggleSidebar}>
-          <img className="menu-btn" src={menu_icon} alt="" />
+          <img className="menu-btnicons" src={menu_icon} alt="" />
         </button>
+
         <Link
           to="/"
           onClick={() => {
@@ -41,16 +42,16 @@ const Navbar = ({ toggleSidebar }) => {
           style={{ textDecoration: "none" }}
           className="nav-logo"
         >
-          {/* <img src={logo} alt="logo" /> */}
-          <p>Sucathy</p>
+          <img src={logo} alt="logo" />
+          {/* <p>ShopSJ</p> */}
         </Link>
-
-        <img
+        {/* <img
           onClick={dropdown_toggle}
           className="nav-dropdown"
           src={nav_dropdown}
           alt=""
-        />
+        /> */}
+
         <ul ref={menuRef} className="nav-menu">
           <li
             onClick={() => {
@@ -64,13 +65,13 @@ const Navbar = ({ toggleSidebar }) => {
           </li>
           <li
             onClick={() => {
-              setMenu("mens");
+              setMenu("/Men");
             }}
           >
-            <Link to="/mens" style={{ textDecoration: "none" }}>
+            <Link to="/Mens" style={{ textDecoration: "none" }}>
               Men
             </Link>
-            {menu === "mens" ? <hr /> : <></>}
+            {menu === "/Men" ? <hr /> : <></>}
           </li>
           <li
             onClick={() => {
