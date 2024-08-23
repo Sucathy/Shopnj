@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import MenuLists from "./MenuLists";
 import "./OrderLists.css";
 
@@ -9,7 +10,7 @@ const OrderList = ({ userId }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch(`http://54.227.62.35:4000/orderdetails`, {
+        const response = await fetch(`http://localhost:4000/orderdetails`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -53,49 +54,39 @@ const OrderList = ({ userId }) => {
               {orders &&
                 orders.map((order, index) => (
                   <li key={index}>
-                    <div className="order-products">
-                      {/* <h2>Products:</h2> */}
-                      {order.products && order.products.length > 0 ? (
-                        <ul>
-                          {order.products.map((product, idx) => (
-                            <h2 key={idx}>
-                              <img
-                                src={product.image}
-                                alt={`Product ${product.productId}`}
-                                style={{ width: "150px", height: "150px" }}
-                              />
-                              {/* <h3>Product ID: {product.productId}</h3> */}
-                              <h3 className="orderquantity">
-                                Quantity : {product.quantity}
-                              </h3>
-                            </h2>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p>No products found in this order.</p>
-                      )}
-                    </div>
-                    {/* <h2>Order ID: {order.orderId}</h2> */}
-                    <h3>Order Date: {order.orderDate}</h3>
-                    <h3>
-                      Price: ₹{order.amount / 100} {order.paymentStatus}
-                    </h3>
-
-                    <div className="order-shipping-address">
-                      <h2>Shipping Address:</h2>
-                      <h3>
-                        {order.shipping_address?.username}{" "}
-                        {order.shipping_address?.lastName}
-                        {" | "}
-                        {order.shipping_address?.phoneNumber}
-                      </h3>
-                      <p>
-                        {order.shipping_address?.fullAddress}{" "}
-                        {order.shipping_address?.pinCode}{" "}
-                        {order.shipping_address?.state}{" "}
-                        {order.shipping_address?.city}
-                      </p>
-                    </div>
+                    <Link to={`/orderlistdetails/${order.orderId}`}>
+                      <div className="order-products">
+                        {order.products && order.products.length > 0 ? (
+                          <ul>
+                            {order.products.map((product, idx) => (
+                              <h2 key={idx}>
+                                <img
+                                  src={product.image}
+                                  alt={`Product ${product.productId}`}
+                                  style={{
+                                    width: "100%",
+                                    maxWidth: "150px",
+                                    height: "auto",
+                                  }}
+                                />{" "}
+                              </h2>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p>No products found in this order.</p>
+                        )}
+                      </div>
+                      <h6
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-end", // Aligns the text to the right within the flex container
+                          marginLeft: "auto", // Pushes the h6 element to the right
+                          marginRight: "20px", // Adds space on the right side
+                        }}
+                      >
+                        Click here
+                      </h6>
+                    </Link>
                   </li>
                 ))}
             </ul>

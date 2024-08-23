@@ -12,7 +12,11 @@
   padding: 10px;
   border-radius: 5px;
 }
-
+.menu-listcard img {
+  width: 20px;
+  margin-left: 3px;
+  margin-right: 14px;
+}
 .menu-listcard a {
   display: block;
   color: #333;
@@ -28,7 +32,7 @@
 
 .hrrr {
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #343434;
   margin: 5px 0;
 }
 

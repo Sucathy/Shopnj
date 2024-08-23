@@ -1,8 +1,8 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -30%; /* Initially hidden off-screen to the left */
-  width: 22%;
+  left: -50%; /* Initially hidden off-screen to the left */
+  width: 40%;
   margin-top: 80px;
   height: 100%;
   background-color: #000000; /* Background color */
@@ -31,7 +31,7 @@
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
+  padding: 4px;
 }
 
 .sidebar ul li {

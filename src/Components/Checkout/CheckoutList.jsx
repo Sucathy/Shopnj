@@ -24,7 +24,7 @@ const CheckoutList = ({ onSelectAddress }) => {
 
   const fetchAccountDetails = async () => {
     try {
-      const response = await fetch("http://54.227.62.35:4000/accountdetails", {
+      const response = await fetch("http://localhost:4000/accountdetails", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
