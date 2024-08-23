@@ -9,8 +9,8 @@ import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+import Video2 from "../Assets/ewvideos2.mp4";
 import Video1 from "../Assets/videobanner1.mp4";
-import Video2 from "../Assets/videobanner2.mp4";
 import Video3 from "../Assets/videobanner3.mp4";
 import Video4 from "../Assets/videobanner4.mp4";
 
@@ -48,11 +48,11 @@ const BestSeller = () => {
         sx={{
           display: "flex",
           alignItems: "center",
-          height: 80,
+          height: 90,
           pl: 2,
           bgcolor: "background.default",
           "@media (max-width: 600px)": {
-            height: 60,
+            height: 70,
             pl: 1,
           },
         }}

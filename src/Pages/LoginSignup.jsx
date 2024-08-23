@@ -124,7 +124,7 @@ const LoginSignup = () => {
             />
           )}
           {(state === "Sign Up" || state === "Login") && (
-            <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+            <FormControl sx={{ m: 1, width: "45ch" }} variant="outlined">
               <InputLabel htmlFor="outlined-adornment-password">
                 Password
               </InputLabel>
@@ -138,6 +138,15 @@ const LoginSignup = () => {
                       onClick={handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
+                      sx={{
+                        backgroundColor: "#f0f0f0", // Light grey background
+                        color: "#1976d2", // Primary color
+                        "&:hover": {
+                          backgroundColor: "#e0e0e0", // Darker grey on hover
+                        },
+                        padding: "20px", // Custom padding
+                        borderRadius: "50%", // Rounded corners
+                      }}
                     >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
