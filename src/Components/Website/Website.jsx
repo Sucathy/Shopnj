@@ -7,7 +7,7 @@ const Website = () => {
 
   // Fetch all products from the server
   const fetchInfo = () => {
-    fetch("http://52.87.228.187:4000/allwebproducts")
+    fetch("https://shopnjs.onrender.com/allwebproducts")
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

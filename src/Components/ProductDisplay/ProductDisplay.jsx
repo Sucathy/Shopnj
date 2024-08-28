@@ -15,7 +15,7 @@ const ProductDisplay = (props) => {
   const [selectedImage, setSelectedImage] = useState("image");
 
   const fetchInfo = () => {
-    fetch("http://52.87.228.187:4000/newcollections")
+    fetch("https://shopnjs.onrender.com/newcollections")
       .then((res) => res.json())
       .then((data) => setNewCollection(data));
   };

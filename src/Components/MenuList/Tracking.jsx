@@ -131,7 +131,7 @@ export default function Tracking() {
     const fetchOrderDetails = async () => {
       try {
         const response = await fetch(
-          `http://52.87.228.187:4000/orderdetails/${orderId}`,
+          `https://shopnjs.onrender.com/orderdetails/${orderId}`,
           {
             method: "GET",
             headers: {

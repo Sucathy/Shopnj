@@ -23,7 +23,7 @@ const LoginSignup = () => {
   };
 
   const login = async () => {
-    const response = await fetch("http://52.87.228.187:4000/login", {
+    const response = await fetch("https://shopnjs.onrender.com/login", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -41,7 +41,7 @@ const LoginSignup = () => {
   };
 
   const signup = async () => {
-    const response = await fetch("http://52.87.228.187:4000/signup", {
+    const response = await fetch("https://shopnjs.onrender.com/signup", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -59,7 +59,7 @@ const LoginSignup = () => {
   };
 
   const requestOtp = async () => {
-    const response = await fetch("http://52.87.228.187:4000/requestotp", {
+    const response = await fetch("https://shopnjs.onrender.com/requestotp", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -77,7 +77,7 @@ const LoginSignup = () => {
   };
 
   const resetPassword = async () => {
-    const response = await fetch("http://52.87.228.187:4000/resetpassword", {
+    const response = await fetch("https://shopnjs.onrender.com/resetpassword", {
       method: "POST",
       headers: {
         Accept: "application/json",

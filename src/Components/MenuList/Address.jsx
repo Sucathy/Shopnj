@@ -25,13 +25,16 @@ const Address = () => {
 
   const fetchAccountDetails = async () => {
     try {
-      const response = await fetch("http://52.87.228.187:4000/accountdetails", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("auth-token") || "",
-        },
-      });
+      const response = await fetch(
+        "https://shopnjs.onrender.com/accountdetails",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("auth-token") || "",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch account details");

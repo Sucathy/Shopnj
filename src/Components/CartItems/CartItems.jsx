@@ -80,7 +80,7 @@ const CartItems = () => {
         return;
       }
 
-      const response = await fetch("http://52.87.228.187:4000/order", {
+      const response = await fetch("https://shopnjs.onrender.com/order", {
         method: "POST",
         body: JSON.stringify({
           amount: totalCartAmount * 100, // Amount should be in the smallest unit (e.g., paise for INR)
@@ -120,7 +120,7 @@ const CartItems = () => {
             };
 
             const validateRes = await fetch(
-              "http://52.87.228.187:4000/order/validate",
+              "https://shopnjs.onrender.com/order/validate",
               {
                 method: "POST",
                 body: JSON.stringify(body),
