@@ -15,7 +15,7 @@ const ProductDisplay = (props) => {
   const [selectedImage, setSelectedImage] = useState("image");
 
   const fetchInfo = () => {
-    fetch("http://54.204.66.236:4000/newcollections")
+    fetch("http://52.87.228.187:4000/newcollections")
       .then((res) => res.json())
       .then((data) => setNewCollection(data));
   };

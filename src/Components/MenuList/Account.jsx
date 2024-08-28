@@ -23,7 +23,7 @@ const Account = () => {
 
   const fetchAccountDetails = async () => {
     try {
-      const response = await fetch("http://54.204.66.236:4000/accountdetails", {
+      const response = await fetch("http://52.87.228.187:4000/accountdetails", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Account = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://54.204.66.236:4000/account", {
+      const response = await fetch("http://52.87.228.187:4000/account", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
