@@ -25,7 +25,7 @@ const Address = () => {
 
   const fetchAccountDetails = async () => {
     try {
-      const response = await fetch("http://44.203.86.144:4000/accountdetails", {
+      const response = await fetch("http://3.86.225.128:4000/accountdetails", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
