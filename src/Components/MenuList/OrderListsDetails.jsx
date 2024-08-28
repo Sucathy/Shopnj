@@ -12,7 +12,7 @@ const OrderListsDetails = () => {
     const fetchOrderDetails = async () => {
       try {
         const response = await fetch(
-          `http://35.175.149.156:4000/orderdetails/${orderId}`,
+          `http://44.203.86.144:4000/orderdetails/${orderId}`,
           {
             method: "GET",
             headers: {

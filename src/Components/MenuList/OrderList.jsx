@@ -10,16 +10,13 @@ const OrderList = ({ userId }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch(
-          `http://35.175.149.156:4000/orderdetails`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              "auth-token": localStorage.getItem("auth-token") || "",
-            },
-          }
-        );
+        const response = await fetch(`http://44.203.86.144:4000/orderdetails`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("auth-token") || "",
+          },
+        });
 
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
