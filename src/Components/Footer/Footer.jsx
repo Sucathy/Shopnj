@@ -6,16 +6,13 @@ import React from "react";
 import whatsapp_icon from "../Assets/whatsapp_icon.png";
 import "./Footer.css";
 // import Fade from "@mui/material/Fade";
-<<<<<<< HEAD
-import { Instagram } from "@mui/icons-material";
-import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
 
-=======
+
+
+
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Emailicon from "../Assets/email.png";
->>>>>>> origin/main
 const Footer = () => {
   // const [expanded, setExpanded] = useState(false);
 
@@ -190,15 +187,6 @@ const Footer = () => {
             <div className="footer-social-icons">
               <div className="footer-icons-container">
                 <a
-<<<<<<< HEAD
-                  href="https://www.linkedin.com/feed/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={Instagram} alt="LinkedIn Icon" />
-                </a>
-              </div>
-=======
                   href="mailto:susuresh158@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -207,7 +195,6 @@ const Footer = () => {
                 </a>
               </div>
 
->>>>>>> origin/main
               <div className="footer-icons-container">
                 <a
                   href="https://chat.whatsapp.com/DLS6LXieTArKCTMJs1BM8Y"
