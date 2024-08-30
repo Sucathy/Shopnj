@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BestSeller from "../Components/BestSeller/BestSeller";
 import Hero from "../Components/Hero/Hero";
 import NewCollections from "../Components/NewCollections/NewCollections";
 import NewsLetter from "../Components/NewsLetter/NewsLetter";
@@ -9,10 +10,10 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => {
-    fetch("http://localhost:4000/popularinwomen")
+    fetch("http://54.204.66.236:4000/popularinwomen")
       .then((res) => res.json())
       .then((data) => setPopular(data));
-    fetch("http://localhost:4000/newcollections")
+    fetch("http://54.204.66.236:4000/newcollections")
       .then((res) => res.json())
       .then((data) => setNewCollection(data));
   };
@@ -36,7 +37,11 @@ const Shop = () => {
       <OfferZone />
       {/* <Offers/> */}
       <hr style={customLineStyle} />
+<<<<<<< HEAD
 
+=======
+      <BestSeller />
+>>>>>>> origin/main
       <NewCollections data={newcollection} />
       <NewsLetter />
     </div>

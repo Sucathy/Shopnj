@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { default as React, useEffect, useState } from "react";
+=======
+import { default as React } from "react";
+>>>>>>> origin/main
 import Item from "../Item/Item";
 // Ensure this path is correct
 import "./Popular.css";
 
 const Popular = (props) => {
+<<<<<<< HEAD
   const [allwebproducts, setAllwebProducts] = useState([]);
 
   // Fetch all products from the server
@@ -17,6 +22,9 @@ const Popular = (props) => {
   useEffect(() => {
     fetchInfo();
   }, []);
+=======
+  // Fetch all products from the server
+>>>>>>> origin/main
 
   return (
     <div className="popular">
@@ -38,6 +46,7 @@ const Popular = (props) => {
           );
         })}
       </div>
+<<<<<<< HEAD
       <div className="website-container">
         {/* <div className="listproduct"> */}
         {/* <h1>All Website Change List</h1>
@@ -113,6 +122,9 @@ const Popular = (props) => {
           {/* <hr /> */}
         </div>
       </div>
+=======
+
+>>>>>>> origin/main
       {/* </div> */}
     </div>
   );

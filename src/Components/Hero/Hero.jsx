@@ -25,7 +25,11 @@ const Hero = () => {
   const maxSteps = allwebproducts.length * 3;
 
   const fetchInfo = () => {
+<<<<<<< HEAD
     fetch("http://54.227.62.35:4000/allwebproducts")
+=======
+    fetch("http://54.204.66.236:4000/allwebproducts")
+>>>>>>> origin/main
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

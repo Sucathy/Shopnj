@@ -7,7 +7,11 @@ const Website = () => {
 
   // Fetch all products from the server
   const fetchInfo = () => {
+<<<<<<< HEAD
     fetch("http://localhost:4000/allwebproducts")
+=======
+    fetch("http://54.204.66.236:4000/allwebproducts")
+>>>>>>> origin/main
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data))
       .catch((error) => console.error("Error fetching products:", error));

@@ -26,7 +26,11 @@ const AddNewAddress = () => {
 
   const fetchAccountDetails = async () => {
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:4000/addressdetails", {
+=======
+      const response = await fetch("http://54.204.66.236:4000/addressdetails", {
+>>>>>>> origin/main
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +61,11 @@ const AddNewAddress = () => {
     e.preventDefault();
 
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:4000/address", {
+=======
+      const response = await fetch("http://54.204.66.236:4000/address", {
+>>>>>>> origin/main
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +111,11 @@ const AddNewAddress = () => {
   const handleDelete = async (addressId) => {
     try {
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:4000/address/${addressId}`,
+=======
+        `http://54.204.66.236:4000/address/${addressId}`,
+>>>>>>> origin/main
         {
           method: "DELETE",
           headers: {

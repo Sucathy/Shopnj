@@ -116,9 +116,15 @@
   width: 20%;
   height: auto;
   padding: 4px;
+<<<<<<< HEAD
   background-color: #7f7f7f;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+=======
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+>>>>>>> origin/main
 }
 
 .loginnn img {

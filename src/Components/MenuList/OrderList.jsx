@@ -10,7 +10,11 @@ const OrderList = ({ userId }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
+<<<<<<< HEAD
         const response = await fetch(`http://localhost:4000/orderdetails`, {
+=======
+        const response = await fetch(`http://54.204.66.236:4000/orderdetails`, {
+>>>>>>> origin/main
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -76,6 +80,19 @@ const OrderList = ({ userId }) => {
                           <p>No products found in this order.</p>
                         )}
                       </div>
+<<<<<<< HEAD
+=======
+                      <h6
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-end", // Aligns the text to the right within the flex container
+                          marginLeft: "auto", // Pushes the h6 element to the right
+                          marginRight: "20px", // Adds space on the right side
+                        }}
+                      >
+                        Click here
+                      </h6>
+>>>>>>> origin/main
                     </Link>
                   </li>
                 ))}

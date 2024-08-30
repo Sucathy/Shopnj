@@ -31,7 +31,11 @@ const Navbar = ({ toggleSidebar }) => {
     <>
       <div className="nav">
         <button className="menu-btn" onClick={toggleSidebar}>
+<<<<<<< HEAD
           <img className="menu-btnicon" src={menu_icon} alt="" />
+=======
+          <img className="menu-btnicons" src={menu_icon} alt="" />
+>>>>>>> origin/main
         </button>
 
         <Link

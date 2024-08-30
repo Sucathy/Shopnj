@@ -15,7 +15,11 @@ const ProductDisplay = (props) => {
   const [selectedImage, setSelectedImage] = useState("image");
 
   const fetchInfo = () => {
+<<<<<<< HEAD
     fetch("http://localhost:4000/newcollections")
+=======
+    fetch("http://54.204.66.236:4000/newcollections")
+>>>>>>> origin/main
       .then((res) => res.json())
       .then((data) => setNewCollection(data));
   };
@@ -97,7 +101,11 @@ const ProductDisplay = (props) => {
           {/* <div className="brandname">brand {product.category}</div> */}
 
           <div className="productdisplay-right-image-options">
+<<<<<<< HEAD
             <h1>Select colours </h1>
+=======
+            {/* <h1> </h1> */}
+>>>>>>> origin/main
             <br />
             <div className="productdisplay-right-image-options">
               {[
@@ -137,30 +145,65 @@ const ProductDisplay = (props) => {
               <div
                 className={`size ${selectedSize === "S" ? "selected" : ""}`}
                 onClick={() => handleSizeSelect("S")}
+<<<<<<< HEAD
+=======
+                style={{
+                  backgroundColor:
+                    selectedSize === "S" ? "#620a0a" : "transparent",
+                }}
+>>>>>>> origin/main
               >
                 S
               </div>
               <div
                 className={`size ${selectedSize === "M" ? "selected" : ""}`}
                 onClick={() => handleSizeSelect("M")}
+<<<<<<< HEAD
+=======
+                style={{
+                  backgroundColor:
+                    selectedSize === "M" ? "#620a0a" : "transparent",
+                }}
+>>>>>>> origin/main
               >
                 M
               </div>
               <div
                 className={`size ${selectedSize === "L" ? "selected" : ""}`}
                 onClick={() => handleSizeSelect("L")}
+<<<<<<< HEAD
+=======
+                style={{
+                  backgroundColor:
+                    selectedSize === "L" ? "#620a0a" : "transparent",
+                }}
+>>>>>>> origin/main
               >
                 L
               </div>
               <div
                 className={`size ${selectedSize === "XL" ? "selected" : ""}`}
                 onClick={() => handleSizeSelect("XL")}
+<<<<<<< HEAD
+=======
+                style={{
+                  backgroundColor:
+                    selectedSize === "XL" ? "#620a0a" : "transparent",
+                }}
+>>>>>>> origin/main
               >
                 XL
               </div>
               <div
                 className={`size ${selectedSize === "XXL" ? "selected" : ""}`}
                 onClick={() => handleSizeSelect("XXL")}
+<<<<<<< HEAD
+=======
+                style={{
+                  backgroundColor:
+                    selectedSize === "XXL" ? "#620a0a" : "transparent",
+                }}
+>>>>>>> origin/main
               >
                 XXL
               </div>

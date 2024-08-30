@@ -13,7 +13,11 @@ const Product = () => {
       <Breadcrums product={product} />
       <ProductDisplay product={product} />
       <hr />
+<<<<<<< HEAD
       {/* <DescriptionBox /> */}
+=======
+
+>>>>>>> origin/main
       <hr />
       {/* <RelatedProducts /> */}
     </div>

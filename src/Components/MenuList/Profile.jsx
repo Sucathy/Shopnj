@@ -20,7 +20,11 @@ const Profile = () => {
 
   const fetchAccountDetails = async () => {
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:4000/accountdetails", {
+=======
+      const response = await fetch("http://54.204.66.236:4000/accountdetails", {
+>>>>>>> origin/main
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +62,11 @@ const Profile = () => {
     e.preventDefault();
 
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:4000/account", {
+=======
+      const response = await fetch("http://54.204.66.236:4000/account", {
+>>>>>>> origin/main
         method: "POST",
         headers: {
           "Content-Type": "application/json",
