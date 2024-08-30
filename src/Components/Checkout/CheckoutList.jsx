@@ -68,7 +68,7 @@ const CheckoutList = ({ onSelectAddress }) => {
   return (
     <form onSubmit={handleAddAddress} className="saved-addresses">
       <h3>
-        Hey! Welcome back {formData.username} {formData.lastName}
+        Hey..! Welcome back {formData.username} {formData.lastName}
       </h3>
       <br />
       <h4>Shipping Address</h4>
