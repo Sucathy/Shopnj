@@ -24,11 +24,9 @@ const CheckoutList = ({ onSelectAddress }) => {
 
   const fetchAccountDetails = async () => {
     try {
-<<<<<<< HEAD
+
       const response = await fetch("http://localhost:4000/accountdetails", {
-=======
-      const response = await fetch("http://54.204.66.236:4000/accountdetails", {
->>>>>>> origin/main
+
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -72,11 +70,8 @@ const CheckoutList = ({ onSelectAddress }) => {
   return (
     <form onSubmit={handleAddAddress} className="saved-addresses">
       <h3>
-<<<<<<< HEAD
+
         Hey..! Welcome back {formData.username} {formData.lastName}
-=======
-        Hey! Welcome back {formData.username} {formData.lastName}
->>>>>>> origin/main
       </h3>
       <br />
       <h4>Shipping Address</h4>
